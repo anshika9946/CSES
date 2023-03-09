@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
                   
 //(Anshika Agarwal)                   
-public class  Main {
+public class  Number_Spiral {
                    
      public static void main(String args[]) throws IOException {
                    
@@ -12,9 +12,9 @@ public class  Main {
          int t = sc.nextInt();
          while (t-- > 0) 
         {
-            long x=sc.nextLong();
-            long y=sc.nextLong();
-long r=0;
+            int x=sc.nextInt();
+            int y=sc.nextInt();
+int r=0;
 if (x < y)
         {
             if (y % 2 == 1)
