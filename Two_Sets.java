@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
                   
 //(Anshika Agarwal)                   
-public class  Main {
+public class  Two_Sets {
                    
      public static void main(String args[]) throws IOException {
                    
@@ -10,13 +10,11 @@ public class  Main {
                    
                    
          int t = sc.nextInt();
-         for(int n=1;n<=t;n++)
-        { long k1=n*n;              
- long k2=k1-1;             
- long ktot=k1*k2/2;        
-  long red=4*(n-1)*(n-2);  
- 
-  System.out.println( ktot-red);   }    
+         while (t-- > 0) 
+        {
+
+                   
+         }
      }
                                     
                                      
