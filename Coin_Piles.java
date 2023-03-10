@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
                   
 //(Anshika Agarwal)                   
-public class  Main {
+public class  Coin_Piles {
                    
      public static void main(String args[]) throws IOException {
                    
@@ -20,17 +20,15 @@ public class  Main {
             {
                 
                 System.out.println("NO");
-
+ 
             }
          else
            { if ((A + B) % 3 == 0)
                { System.out.println("YES");}
-
+ 
             else
                 {System.out.println("NO");}
 }
-
-                   
          }
      }
                                     

@@ -2,36 +2,20 @@ import java.io.*;
 import java.util.*;
                   
 //(Anshika Agarwal)                   
-public class  Main {
+public class  Bit_Strings {
                    
      public static void main(String args[]) throws IOException {
                    
          FastReader sc = new FastReader();
                    
-                   
+         long M = 1000000007;
          int t = sc.nextInt();
-         while (t-- > 0) 
-        {
-            long A=sc.nextLong();
-            long B=sc.nextLong();
-            
-            
-            if (Math.max(A, B) > 2 * Math.min(A, B))
-            {
-                
-                System.out.println("NO");
-
-            }
-         else
-           { if ((A + B) % 3 == 0)
-               { System.out.println("YES");}
-
-            else
-                {System.out.println("NO");}
-}
-
-                   
-         }
+         int ans=1;
+         for (int i = 0; i < t; i++)
+         { ans=ans*2;
+         ans %= M;}
+System.out.println(ans);
+        
      }
                                     
                                      

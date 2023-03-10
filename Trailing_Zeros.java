@@ -2,37 +2,26 @@ import java.io.*;
 import java.util.*;
                   
 //(Anshika Agarwal)                   
-public class  Main {
+public class  Trailing_Zeros {
                    
      public static void main(String args[]) throws IOException {
                    
          FastReader sc = new FastReader();
                    
-                   
-         int t = sc.nextInt();
-         while (t-- > 0) 
-        {
-            long A=sc.nextLong();
-            long B=sc.nextLong();
-            
-            
-            if (Math.max(A, B) > 2 * Math.min(A, B))
-            {
-                
-                System.out.println("NO");
+             int n=sc.nextInt();      
 
+
+        int count = 0;
+ 
+        for (int i = 5; n / i >= 1; i *= 5)
+          {
+              count += n / i;
             }
-         else
-           { if ((A + B) % 3 == 0)
-               { System.out.println("YES");}
-
-            else
-                {System.out.println("NO");}
-}
-
-                   
-         }
-     }
+ 
+        System.out.println(count);
+    }
+ 
+     
                                     
                                      
                                    
