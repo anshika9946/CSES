@@ -3,13 +3,13 @@ import java.util.*;
 import java.util.Map.Entry;
                   
 //(Anshika Agarwal)                   
-public class  Main {
+public class  Palindrome_Reorder {
     public static String getPalindrome(String str)
     {
          
         
         HashMap<Character,
-                Long> counting = new HashMap<>();
+                Integer> counting = new HashMap<>();
         for(char ch : str.toCharArray())
         {
             if (counting.containsKey(ch))
@@ -18,15 +18,15 @@ public class  Main {
             }
             else
             {
-                counting.put(ch, (long) 1);
+                counting.put(ch, 1);
             }
         }
          
         
-        long oddCount = 0;
+        int oddCount = 0;
         char oddChar = 0;
          
-        for(Entry<Character, Long> itr : counting.entrySet())
+        for(Entry<Character, Integer> itr : counting.entrySet())
         {
             if (itr.getValue() % 2 != 0)
             {
@@ -42,7 +42,7 @@ public class  Main {
         }
 
         String firstHalf = "", lastHalf = "";
-        for(Entry<Character, Long> itr : counting.entrySet())
+        for(Entry<Character, Integer> itr : counting.entrySet())
         {
 
             String ss = "";
