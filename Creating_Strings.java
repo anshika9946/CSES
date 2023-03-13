@@ -1,74 +1,38 @@
 import java.io.*;
 import java.util.*;
-import java.util.Map.Entry;
                   
 //(Anshika Agarwal)                   
-public class  Palindrome_Reorder {
-    public static String getPalindrome(String str)
+public class  Creating_Strings {
+    static void printPermutn(String str, String ans)
     {
-         
-        
-        HashMap<Character,
-                Integer> counting = new HashMap<>();
-        for(char ch : str.toCharArray())
-        {
-            if (counting.containsKey(ch))
-            {
-                counting.put(ch, counting.get(ch) + 1);
-            }
-            else
-            {
-                counting.put(ch, 1);
-            }
+        if (str.length() == 0) {
+            
+            System.out.println(ans + " ");
+            return;
         }
-         
-        
-        Integer oddCount = 0;
-        Character oddChar = 0;
-         
-        for(Entry<Character, Integer> itr : counting.entrySet())
-        {
-            if (itr.getValue() % 2 != 0)
-            {
-                oddCount++;
-                oddChar = itr.getKey();
-            }
+ 
+        for (int i = 0; i < str.length(); i++) {
+ 
+            
+            char ch = str.charAt(i);
+ 
+            
+            String ros = str.substring(0, i) +
+                        str.substring(i + 1);
+ 
+           
+            printPermutn(ros, ans + ch);
         }
-
-        if (oddCount > 1 || oddCount == 1 &&
-            str.length() % 2 == 0)
-        {
-            return "NO SOLUTION";
-        }
-
-        StringBuilder firstHalf=new StringBuilder("");
- StringBuilder lastHalf=new StringBuilder("");
-        for(Entry<Character, Integer> itr : counting.entrySet())
-        {
-
-            StringBuilder ss=new StringBuilder("");
-            for(int i = 0; i < itr.getValue() / 2; i++)
-            {
-                
-                ss.append(itr.getKey());
-            }
-
-            firstHalf.append(ss);
-            lastHalf=(ss.append(lastHalf));
-        }
-         
-
-        return (oddCount == 1) ?
-               ( (firstHalf.append(oddChar.toString()).append(lastHalf)).toString()) :
-               (firstHalf.append(lastHalf).toString());
-    }   
+    }
      public static void main(String args[]) throws IOException {
                    
          FastReader sc = new FastReader();
                    
                    
-String s=sc.next();
-System.out.println(getPalindrome(s));
+         String s=sc.next();
+         
+         printPermutn(s, "");
+         
      }
                                     
                                      

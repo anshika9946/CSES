@@ -9,7 +9,7 @@ public class  Main {
          
         
         HashMap<Character,
-                Long> counting = new HashMap<>();
+                Integer> counting = new HashMap<>();
         for(char ch : str.toCharArray())
         {
             if (counting.containsKey(ch))
@@ -18,15 +18,15 @@ public class  Main {
             }
             else
             {
-                counting.put(ch, (long) 1);
+                counting.put(ch, 1);
             }
         }
          
         
-        long oddCount = 0;
-        char oddChar = 0;
+        Integer oddCount = 0;
+        Character oddChar = 0;
          
-        for(Entry<Character, Long> itr : counting.entrySet())
+        for(Entry<Character, Integer> itr : counting.entrySet())
         {
             if (itr.getValue() % 2 != 0)
             {
@@ -41,24 +41,26 @@ public class  Main {
             return "NO SOLUTION";
         }
 
-        String firstHalf = "", lastHalf = "";
-        for(Entry<Character, Long> itr : counting.entrySet())
+        StringBuilder firstHalf=new StringBuilder("");
+ StringBuilder lastHalf=new StringBuilder("");
+        for(Entry<Character, Integer> itr : counting.entrySet())
         {
 
-            String ss = "";
+            StringBuilder ss=new StringBuilder("");
             for(int i = 0; i < itr.getValue() / 2; i++)
             {
-                ss += itr.getKey();
+                
+                ss.append(itr.getKey());
             }
 
-            firstHalf = firstHalf + ss;
-            lastHalf = ss + lastHalf;
+            firstHalf.append(ss);
+            lastHalf=(ss.append(lastHalf));
         }
          
 
         return (oddCount == 1) ?
-               (firstHalf + oddChar + lastHalf) :
-               (firstHalf + lastHalf);
+               ( (firstHalf.append(oddChar.toString()).append(lastHalf)).toString()) :
+               (firstHalf.append(lastHalf).toString());
     }   
      public static void main(String args[]) throws IOException {
                    
