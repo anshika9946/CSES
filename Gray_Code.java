@@ -2,27 +2,44 @@ import java.io.*;
 import java.util.*;
                   
 //(Anshika Agarwal)                   
-public class  Main {
+public class  Gray_Code {
+    static void generateGrayarr(int n)
+    {
 
-    static void towerOfHanoi(int n, char from_rod,
-    char to_rod, char aux_rod)
-{
-if (n == 0) {
-return;
-}
-towerOfHanoi(n - 1, from_rod, aux_rod, to_rod);
-System.out.println(from_rod + " "+ to_rod);
-towerOfHanoi(n - 1, aux_rod, to_rod, from_rod);
-}  
+        if (n <= 0)
+            return;
+ 
+        ArrayList<String> arr = new ArrayList<String> ();
+     
+
+        arr.add("0");
+        arr.add("1");
+   
+        int i, j;
+        for (i = 2; i < (1<<n); i = i<<1)
+        {
+
+            for (j = i-1 ; j >= 0 ; j--)
+                arr.add(arr.get(j));
+              for (j = 0 ; j < i ; j++)
+                arr.set(j, "0" + arr.get(j));
+     
+
+            for (j = i ; j < 2*i ; j++)
+                arr.set(j, "1" + arr.get(j));
+        }
+     
+
+        for (i = 0 ; i < arr.size() ; i++ )
+            System.out.println(arr.get(i));
+    }
      public static void main(String args[]) throws IOException {
                    
          FastReader sc = new FastReader();
                    
                    
          int t = sc.nextInt();
-         int d=(int)Math.pow(2, t)-1;
-         System.out.println(d);
-         towerOfHanoi(t, '1', '3', '2');
+generateGrayarr(t);
      }
                                     
                                      
@@ -65,7 +82,7 @@ static void print(int a[]){int n=a.length;for(int i=0;i<n;i++){System.out.print(
         }
         String nextLine()
         {
-        String str = ""; 
+        String str = "Gray_Code"; 
             try {
                 if(st.hasMoreTokens()){
                     str = st.nextToken(

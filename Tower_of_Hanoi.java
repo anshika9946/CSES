@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
                   
 //(Anshika Agarwal)                   
-public class  Main {
+public class  Tower_of_Hanoi {
 
     static void towerOfHanoi(int n, char from_rod,
     char to_rod, char aux_rod)
