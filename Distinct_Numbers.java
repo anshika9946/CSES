@@ -2,52 +2,23 @@ import java.io.*;
 import java.util.*;
                   
 //(Anshika Agarwal)                   
-public class  Main {
+public class  Distinct_Numbers {
                    
      public static void main(String args[]) throws IOException {
                    
          FastReader sc = new FastReader();
                    
                    
-         int n = sc.nextInt();
-         int m = sc.nextInt();
-         int k = sc.nextInt();
-         int a[]=new int[n];
-         int b[]=new int[m];
-         ArrayList<Integer> ai=new ArrayList<>();
-         for(int i=0;i<n;i++)
-         {
+         int t = sc.nextInt();
+        HashSet<Integer> h =new HashSet<>();
+        int a[]=new int[t];
+        for(int i=0;i<t;i++)
+        {
             a[i]=sc.nextInt();
-         }
-         for(int i=0;i<m;i++)
-         {
-            b[i]=sc.nextInt();
-            ai.add(b[i]);
-         }
-         Arrays.sort(a);
-         Arrays.sort(b);
- 
-         int i = 0;
-         int j = 0;
-         int ans = 0;
-         while (i < n && j < m) {
-            if (Math.abs(a[i] - b[j]) <= k) {
-				i++;
-				j++;
-				ans++;
-			}
-			// Apartment is too small -> increment apartment pointer
-			else if (a[i] > b[j]) {
-				j++;
-			}
-			// Apartment is too big -> increment applicant pointer
-			else {
-				i++;
-			}
-         }
-         System.out.println(ans);
+            h.add(a[i]);
+        }
+        System.out.println(h.size());
 
-         
      }
                                     
                                      
@@ -90,7 +61,7 @@ static void print(int a[]){int n=a.length;for(int i=0;i<n;i++){System.out.print(
         }
         String nextLine()
         {
-        String str = "Apartments"; 
+        String str =" Distinct_Numbers"; 
             try {
                 if(st.hasMoreTokens()){
                     str = st.nextToken(
