@@ -1,2 +1,2 @@
 # CSES
-Targeting to solve at least 5 problems daily
+Targeting to solve at least 1 problem daily
