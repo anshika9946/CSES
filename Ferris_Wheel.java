@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
                   
 //(Anshika Agarwal)                   
-public class  Main {
+public class  Ferris_Wheel {
                    
      public static void main(String args[]) throws IOException {
                    
